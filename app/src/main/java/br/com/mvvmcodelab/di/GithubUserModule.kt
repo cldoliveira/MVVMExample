@@ -1,6 +1,6 @@
 package br.com.mvvmcodelab.di
 
-import br.com.mvvmcodelab.GithubUsersActivity
+import br.com.mvvmcodelab.ui.GithubUsersActivity
 import dagger.Binds
 import dagger.Module
 
