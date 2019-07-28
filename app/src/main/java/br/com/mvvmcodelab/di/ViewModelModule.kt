@@ -1,16 +1,20 @@
 package br.com.mvvmcodelab.di
 
 import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProviders
-import br.com.mvvmcodelab.ui.GithubUsersActivity
+import android.arch.lifecycle.ViewModelProvider
 import br.com.mvvmcodelab.viewmodel.GithubViewModel
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
+import dagger.multibindings.IntoMap
 
 @Module
-class ViewModelModule {
+abstract class ViewModelModule {
+    @Binds
+    @IntoMap
+    @ViewModelKey(GithubViewModel::class)
+    abstract fun bindGithubViewModel(viewModel: GithubViewModel): ViewModel
 
-    @Provides
-    fun provideGithubViewModel(activity: GithubUsersActivity): ViewModel = ViewModelProviders.of(activity).get(GithubViewModel::class.java)
-
+    @Binds
+    abstract fun bindViewModelFactory(factory: GithubViewModelFactory): ViewModelProvider.Factory
 }
+

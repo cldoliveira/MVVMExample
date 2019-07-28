@@ -2,6 +2,7 @@ package br.com.mvvmcodelab.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.util.Log
 import br.com.mvvmcodelab.model.User
 import br.com.mvvmcodelab.repository.GithubRepository
 import io.reactivex.disposables.CompositeDisposable

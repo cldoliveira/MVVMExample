@@ -8,7 +8,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBindingModule {
 
     @ActivityScoped
-    @ContributesAndroidInjector(modules = [GithubUserModule::class])
+    @ContributesAndroidInjector
     internal abstract fun githubActivity(): GithubUsersActivity
 
 }
