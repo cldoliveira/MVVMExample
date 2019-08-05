@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVVMCodelab</string>
+    <string name="login_example">mojombo</string>
 </resources>
