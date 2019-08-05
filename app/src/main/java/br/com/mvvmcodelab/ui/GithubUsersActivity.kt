@@ -20,6 +20,7 @@ class GithubUsersActivity : DaggerAppCompatActivity() {
     private lateinit var viewModel: GithubViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(GithubViewModel::class.java)
