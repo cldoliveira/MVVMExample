@@ -9,7 +9,7 @@ import br.com.mvvmcodelab.di.GithubViewModelFactory
 import br.com.mvvmcodelab.model.User
 import br.com.mvvmcodelab.viewmodel.GithubViewModel
 import dagger.android.support.DaggerAppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_github_user.*
 import javax.inject.Inject
 
 class GithubUsersActivity : DaggerAppCompatActivity() {
@@ -22,7 +22,7 @@ class GithubUsersActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_github_user)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(GithubViewModel::class.java)
 
         if (savedInstanceState == null) {
