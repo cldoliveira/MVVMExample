@@ -5,12 +5,12 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:background="@color/background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="@dimen/user_image_size"
             android:layout_height="@dimen/user_image_size"
-            app:srcCompat="@drawable/user_mask"
+            android:src="@drawable/user_mask"
             android:id="@+id/user_image"
             android:layout_marginBottom="@dimen/default_margin"
             android:layout_marginTop="@dimen/default_margin"
