@@ -5,9 +5,8 @@ import android.arch.lifecycle.ViewModel
 import br.com.mvvmcodelab.model.User
 import br.com.mvvmcodelab.repository.GithubRepository
 import io.reactivex.disposables.CompositeDisposable
-import javax.inject.Inject
 
-class GithubViewModel @Inject constructor(private val repository: GithubRepository): ViewModel() {
+class GithubViewModel (private val repository: GithubRepository): ViewModel() {
     private val disposable = CompositeDisposable()
     private val users = MutableLiveData<List<User>>()
     private val usersFiltered = MutableLiveData<List<User>>()

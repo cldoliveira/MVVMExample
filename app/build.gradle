@@ -32,6 +32,7 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportVersion"
     implementation "com.android.support:design:$supportVersion"
     implementation "android.arch.lifecycle:extensions:$archVersion"
+    kapt "android.arch.lifecycle:compiler:$archVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
@@ -41,7 +42,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.picasso:picasso:$picassoVersion"
     implementation "de.hdodenhof:circleimageview:$circleImageView"
-
+    implementation "org.koin:koin-android:$koin"
+    implementation "org.koin:koin-android-viewmodel:$koin"
     implementation "io.reactivex.rxjava2:rxandroid:$rxjavaVersion"
 
     implementation "com.google.dagger:dagger:$daggerVersion"

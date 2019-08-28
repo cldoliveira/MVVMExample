@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import br.com.mvvmcodelab.R
 import br.com.mvvmcodelab.model.User
-import javax.inject.Inject
 
-class GithubUserAdapter @Inject constructor(): RecyclerView.Adapter<GithubUserViewHolder>() {
+class GithubUserAdapter: RecyclerView.Adapter<GithubUserViewHolder>() {
 
     private var users = emptyList<User>()
 

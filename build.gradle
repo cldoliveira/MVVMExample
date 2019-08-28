@@ -42,6 +42,7 @@ ext {
     espressoCore = '3.0.2'
     mockitoVersion = '2.12.0'
     archVersion = '1.1.1'
+    koin = '2.0.1'
 }
 
 task clean(type: Delete) {

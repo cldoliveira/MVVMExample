@@ -1,13 +1,16 @@
 package br.com.mvvmcodelab.di
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
 import br.com.mvvmcodelab.viewmodel.GithubViewModel
-import dagger.Binds
-import dagger.Module
-import dagger.multibindings.IntoMap
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
-@Module
+val viewModelModule = module {
+    viewModel { GithubViewModel(get()) }
+}
+
+
+
+/*@Module
 abstract class ViewModelModule {
     @Binds
     @IntoMap
@@ -16,5 +19,5 @@ abstract class ViewModelModule {
 
     @Binds
     abstract fun bindViewModelFactory(factory: GithubViewModelFactory): ViewModelProvider.Factory
-}
+}*/
 

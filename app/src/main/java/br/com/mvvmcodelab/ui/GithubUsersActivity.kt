@@ -1,8 +1,8 @@
 package br.com.mvvmcodelab.ui
 
 import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
@@ -10,35 +10,27 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import br.com.mvvmcodelab.R
-import br.com.mvvmcodelab.di.GithubViewModelFactory
 import br.com.mvvmcodelab.model.User
 import br.com.mvvmcodelab.viewmodel.GithubViewModel
-import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_github_user.*
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
-class GithubUsersActivity : DaggerAppCompatActivity() {
+class GithubUsersActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var viewModelFactory: GithubViewModelFactory
-
-    @Inject
-    lateinit var adapter: GithubUserAdapter
-
-    private lateinit var viewModel: GithubViewModel
+    private val viewModel: GithubViewModel by viewModel()
+    private val adapter: GithubUserAdapter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_github_user)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(GithubViewModel::class.java)
 
         if (savedInstanceState == null) {
             viewModel.fetchUsers()
         }
 
         progress_bar.visibility = View.VISIBLE
-
         initializeRecyclerView()
         subscribeToUsers()
         subscribeToErrors()
