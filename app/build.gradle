@@ -51,11 +51,11 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
 
+    androidTestImplementation "com.android.support.test:runner:$runner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoCore"
+
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoVersion"
-    testImplementation "android.arch.core:core-testing:1.1.1"
-
-    androidTestImplementation "com.android.support.test:runner:$runner"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoCore"
+    testImplementation "android.arch.core:core-testing:$archVersion"
 }
