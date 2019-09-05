@@ -12,3 +12,6 @@ It´s a simple example. Something may not make sense on your own project.
 In this project, we've got two branches:
 - master: using dagger for dependency injection
 - koin: using koin for dependency injection.
+
+
+![alt text](https://github.com/cldoliveira/MVVMExample/blob/master/user_screen.png)
