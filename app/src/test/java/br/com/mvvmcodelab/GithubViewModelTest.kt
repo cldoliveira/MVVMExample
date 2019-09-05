@@ -54,7 +54,7 @@ class GithubViewModelTest {
         viewModel.fetchUsers()
         viewModel.getUsers().observeForever { response ->
             assertNotNull(response)
-            assertEquals(response!!.size, users.size)
+            assertEquals(response?.size, users.size)
         }
         testObserver.assertComplete().assertValue(users)
     }
@@ -69,8 +69,8 @@ class GithubViewModelTest {
         viewModel.filterUsers("abc")
         viewModel.getUsersFiltered().observeForever {response ->
             assertNotNull(response)
-            assertEquals(response!!.size, 1)
-            assertEquals(response[0].id, 100)
+            assertEquals(response?.size, 1)
+            assertEquals(response?.get(0)?.id, 100)
         }
         testObserver.assertComplete().assertValue(users)
     }
